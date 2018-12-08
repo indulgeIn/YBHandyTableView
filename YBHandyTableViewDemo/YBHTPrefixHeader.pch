@@ -1,0 +1,14 @@
+//
+//  YBHTPrefixHeader.pch
+//  YBHandyTableViewDemo
+//
+//  Created by 杨波 on 2018/12/8.
+//  Copyright © 2018 杨波. All rights reserved.
+//
+
+#ifndef YBHTPrefixHeader_pch
+#define YBHTPrefixHeader_pch
+
+#import "UITableView+YBHandyTableView.h"
+
+#endif /* YBHTPrefixHeader_pch */
