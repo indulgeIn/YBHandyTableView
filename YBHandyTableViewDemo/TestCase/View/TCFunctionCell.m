@@ -39,7 +39,7 @@
 }
 
 + (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model {
-    return 40;
+    return 60;
 }
 
 #pragma mark - getter

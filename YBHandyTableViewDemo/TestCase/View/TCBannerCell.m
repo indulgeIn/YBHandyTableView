@@ -39,7 +39,7 @@
 }
 
 + (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model {
-    return [UIScreen mainScreen].bounds.size.width * 0.66;
+    return [UIScreen mainScreen].bounds.size.width * 0.6;
 }
 
 #pragma mark - getter

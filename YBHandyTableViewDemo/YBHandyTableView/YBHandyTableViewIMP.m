@@ -17,8 +17,8 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YBHTConfigurator *config = self.dataArray[indexPath.section];
-    id<YBHTCellModelProtocol> model = config.cellModelArray[indexPath.row];
+    YBHTSection *config = self.dataArray[indexPath.section];
+    id<YBHTCellModelProtocol> model = config.rowArray[indexPath.row];
     
     if ([model respondsToSelector:@selector(ybht_cellClass)]) {
         if ([model.ybht_cellClass respondsToSelector:@selector(ybht_heightForCellWithModel:)]) {
@@ -29,7 +29,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    YBHTConfigurator *config = self.dataArray[section];
+    YBHTSection *config = self.dataArray[section];
     id<YBHTHeaderModelProtocol> model = config.headerModel;
     
     if (model && [model.ybht_headerClass respondsToSelector:@selector(ybht_heightForHeaderWithModel:)]) {
@@ -39,7 +39,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    YBHTConfigurator *config = self.dataArray[section];
+    YBHTSection *config = self.dataArray[section];
     id<YBHTFooterModelProtocol> model = config.footerModel;
     
     if (model && [model.ybht_footerClass respondsToSelector:@selector(ybht_heightForFooterWithModel:)]) {
@@ -49,7 +49,7 @@
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    YBHTConfigurator *config = self.dataArray[section];
+    YBHTSection *config = self.dataArray[section];
     id<YBHTHeaderModelProtocol> model = config.headerModel;
     if (!model) return nil;
     
@@ -68,7 +68,7 @@
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    YBHTConfigurator *config = self.dataArray[section];
+    YBHTSection *config = self.dataArray[section];
     id<YBHTFooterModelProtocol> model = config.footerModel;
     if (!model) return nil;
     
@@ -93,12 +93,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray[section].cellModelArray.count;
+    return self.dataArray[section].rowArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YBHTConfigurator *config = self.dataArray[indexPath.section];
-    id<YBHTCellModelProtocol> model = config.cellModelArray[indexPath.row];
+    YBHTSection *config = self.dataArray[indexPath.section];
+    id<YBHTCellModelProtocol> model = config.rowArray[indexPath.row];
     
     Class cellClass = [model respondsToSelector:@selector(ybht_cellClass)] ? model.ybht_cellClass : UITableViewCell.class;
     NSString *identifier = NSStringFromClass(cellClass);

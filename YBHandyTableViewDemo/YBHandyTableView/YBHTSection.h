@@ -1,5 +1,5 @@
 //
-//  YBHTConfigurator.h
+//  YBHTSection.h
 //  YBHandyTableViewDemo
 //
 //  Created by 杨波 on 2018/12/8.
@@ -16,13 +16,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YBHTConfigurator : NSObject
+@interface YBHTSection : NSObject
 
 @property (nonatomic, strong) id<YBHTHeaderModelProtocol> headerModel;
 
 @property (nonatomic, strong) id<YBHTFooterModelProtocol> footerModel;
 
-@property (nonatomic, strong, readonly) NSMutableArray<id<YBHTCellModelProtocol>> *cellModelArray;
+@property (nonatomic, strong, readonly) NSMutableArray<id<YBHTCellModelProtocol>> *rowArray;
 
 @end
 

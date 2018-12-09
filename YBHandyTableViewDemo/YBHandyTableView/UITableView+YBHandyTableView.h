@@ -7,15 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YBHTConfigurator.h"
+#import "YBHTSection.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (YBHandyTableView)
 
-@property (nonatomic, strong, readonly) NSMutableArray<YBHTConfigurator *> *ybht_dataArray;
+/** 一个 section 情况, 直接配置 cellModel */
+@property (nonatomic, strong, readonly) NSMutableArray<id<YBHTCellModelProtocol>> *ybht_rowArray;
 
+/** 一个 section 情况，可配置 headerModel/footerModel/cellModel */
+@property (nonatomic, strong, readonly) YBHTSection *ybht_section;
+
+/** 多个 section 情况 */
+@property (nonatomic, strong, readonly) NSMutableArray<YBHTSection *> *ybht_sectionArray;
+
+/**
+ 添加代理回调（注意组件使用多代理，谨慎使用）
+ */
 - (void)ybht_addDelegate:(id<UITableViewDelegate>)delegate;
+
+/**
+ 添加代理回调（注意组件使用多代理，谨慎使用）
+ 通常情况下不需要使用这个方法
+ */
 - (void)ybht_addDataSource:(id<UITableViewDataSource>)dataSource;
 
 @end

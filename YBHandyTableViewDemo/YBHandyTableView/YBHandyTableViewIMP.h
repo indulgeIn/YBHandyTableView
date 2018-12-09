@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YBHTConfigurator.h"
+#import "YBHTSection.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YBHandyTableViewIMP : NSObject
 
-@property (nonatomic, strong) NSMutableArray<YBHTConfigurator *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<YBHTSection *> *dataArray;
 
 @end
 

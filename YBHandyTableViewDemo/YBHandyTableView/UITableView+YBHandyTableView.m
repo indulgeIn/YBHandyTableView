@@ -11,7 +11,7 @@
 #import "YBHandyTableViewProxy.h"
 #import "YBHandyTableViewIMP.h"
 
-static const void *ybht_keyOfDataArray = &ybht_keyOfDataArray;
+static const void *ybht_keyOfSectionArray = &ybht_keyOfSectionArray;
 static const void *ybht_keyOfProxy = &ybht_keyOfProxy;
 static const void *ybht_keyOfImp = &ybht_keyOfImp;
 
@@ -34,15 +34,28 @@ static const void *ybht_keyOfImp = &ybht_keyOfImp;
 
 #pragma mark - getter && setter
 
-- (void)setYbht_dataArray:(NSMutableArray * _Nonnull)ybht_dataArray {
-    objc_setAssociatedObject(self, ybht_keyOfDataArray, ybht_dataArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (NSMutableArray<id<YBHTCellModelProtocol>> *)ybht_rowArray {
+    return self.ybht_section.rowArray;
 }
 
-- (NSMutableArray *)ybht_dataArray {
-    NSMutableArray *array = objc_getAssociatedObject(self, ybht_keyOfDataArray);
+- (YBHTSection *)ybht_section {
+    if (self.ybht_sectionArray.count > 0) {
+        return self.ybht_sectionArray[0];
+    }
+    YBHTSection *section = [YBHTSection new];
+    [self.ybht_sectionArray addObject:section];
+    return section;
+}
+
+- (void)setYbht_sectionArray:(NSMutableArray<YBHTSection *> * _Nonnull)ybht_sectionArray {
+    objc_setAssociatedObject(self, ybht_keyOfSectionArray, ybht_sectionArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSMutableArray *)ybht_sectionArray {
+    NSMutableArray *array = objc_getAssociatedObject(self, ybht_keyOfSectionArray);
     if (!array) {
         array = [NSMutableArray array];
-        self.ybht_dataArray = array;
+        self.ybht_sectionArray = array;
         
         self.ybht_imp.dataArray = array;
         [self.ybht_proxy addTarget:self.ybht_imp];

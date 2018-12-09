@@ -24,7 +24,7 @@
 		23E0297A21BBB38C002A3A2D /* TCFunctionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0297921BBB38C002A3A2D /* TCFunctionModel.m */; };
 		23E0297D21BBB3AF002A3A2D /* TCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0297C21BBB3AF002A3A2D /* TCListCell.m */; };
 		23E0298521BBB48F002A3A2D /* TCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0298421BBB48F002A3A2D /* TCListModel.m */; };
-		23E0298821BBBA6C002A3A2D /* YBHTConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0298721BBBA6C002A3A2D /* YBHTConfigurator.m */; };
+		23E0298821BBBA6C002A3A2D /* YBHTSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0298721BBBA6C002A3A2D /* YBHTSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,8 @@
 		23E0297C21BBB3AF002A3A2D /* TCListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCListCell.m; sourceTree = "<group>"; };
 		23E0298321BBB48F002A3A2D /* TCListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCListModel.h; sourceTree = "<group>"; };
 		23E0298421BBB48F002A3A2D /* TCListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCListModel.m; sourceTree = "<group>"; };
-		23E0298621BBBA6C002A3A2D /* YBHTConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTConfigurator.h; sourceTree = "<group>"; };
-		23E0298721BBBA6C002A3A2D /* YBHTConfigurator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTConfigurator.m; sourceTree = "<group>"; };
+		23E0298621BBBA6C002A3A2D /* YBHTSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTSection.h; sourceTree = "<group>"; };
+		23E0298721BBBA6C002A3A2D /* YBHTSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTSection.m; sourceTree = "<group>"; };
 		23E0298921BBBC9E002A3A2D /* YBHTCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellProtocol.h; sourceTree = "<group>"; };
 		23E0298A21BBBCC5002A3A2D /* YBHTCellModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellModelProtocol.h; sourceTree = "<group>"; };
 		23E0298C21BBBD31002A3A2D /* YBHTHeaderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderProtocol.h; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 				23E0298B21BBBCE1002A3A2D /* Protocol */,
 				2374BAC921A152680060E66A /* UITableView+YBHandyTableView.h */,
 				2374BACA21A152680060E66A /* UITableView+YBHandyTableView.m */,
-				23E0298621BBBA6C002A3A2D /* YBHTConfigurator.h */,
-				23E0298721BBBA6C002A3A2D /* YBHTConfigurator.m */,
+				23E0298621BBBA6C002A3A2D /* YBHTSection.h */,
+				23E0298721BBBA6C002A3A2D /* YBHTSection.m */,
 				23E0296321BB8E00002A3A2D /* YBHandyTableViewProxy.h */,
 				23E0296021BB8D6F002A3A2D /* YBHandyTableViewProxy.m */,
 				23E0296721BB9ABD002A3A2D /* YBHandyTableViewIMP.h */,
@@ -278,7 +278,7 @@
 				2394D97321BBEE3000E5841D /* TCViewController.m in Sources */,
 				23E0297A21BBB38C002A3A2D /* TCFunctionModel.m in Sources */,
 				23E0297D21BBB3AF002A3A2D /* TCListCell.m in Sources */,
-				23E0298821BBBA6C002A3A2D /* YBHTConfigurator.m in Sources */,
+				23E0298821BBBA6C002A3A2D /* YBHTSection.m in Sources */,
 				2394D97021BBEE1300E5841D /* TCDataCenter.m in Sources */,
 				23E0298521BBB48F002A3A2D /* TCListModel.m in Sources */,
 				2374BAB421A152320060E66A /* AppDelegate.m in Sources */,
