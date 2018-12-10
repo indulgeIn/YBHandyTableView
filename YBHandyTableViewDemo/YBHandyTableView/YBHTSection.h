@@ -9,19 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "YBHTCellProtocol.h"
 #import "YBHTCellModelProtocol.h"
-#import "YBHTHeaderProtocol.h"
-#import "YBHTHeaderModelProtocol.h"
-#import "YBHTFooterProtocol.h"
-#import "YBHTFooterModelProtocol.h"
+#import "YBHTHeaderFooterProtocol.h"
+#import "YBHTHeaderFooterModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YBHTSection : NSObject
 
-@property (nonatomic, strong) id<YBHTHeaderModelProtocol> headerModel;
+/** UITableView 的 header 对应的 model */
+@property (nonatomic, strong) id<YBHTHeaderFooterModelProtocol> headerModel;
 
-@property (nonatomic, strong) id<YBHTFooterModelProtocol> footerModel;
+/** UITableView 的 footer 对应的 model */
+@property (nonatomic, strong) id<YBHTHeaderFooterModelProtocol> footerModel;
 
+/** UITableView 的 cell 对应的 model 集合 */
 @property (nonatomic, strong, readonly) NSMutableArray<id<YBHTCellModelProtocol>> *rowArray;
 
 @end

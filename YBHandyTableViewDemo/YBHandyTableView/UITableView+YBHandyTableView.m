@@ -35,10 +35,26 @@ static const void *ybht_keyOfImp = &ybht_keyOfImp;
 #pragma mark - getter && setter
 
 - (NSMutableArray<id<YBHTCellModelProtocol>> *)ybht_rowArray {
-    return self.ybht_section.rowArray;
+    return self.ybht_firstSection.rowArray;
 }
 
-- (YBHTSection *)ybht_section {
+- (void)setYbht_headerModel:(id<YBHTHeaderFooterModelProtocol>)ybht_headerModel {
+    self.ybht_firstSection.headerModel = ybht_headerModel;
+}
+
+- (id<YBHTHeaderFooterModelProtocol>)ybht_headerModel {
+    return self.ybht_firstSection.headerModel;
+}
+
+- (void)setYbht_footerModel:(id<YBHTHeaderFooterModelProtocol>)ybht_footerModel {
+    self.ybht_firstSection.footerModel = ybht_footerModel;
+}
+
+- (id<YBHTHeaderFooterModelProtocol>)ybht_footerModel {
+    return self.ybht_firstSection.footerModel;
+}
+
+- (YBHTSection *)ybht_firstSection {
     if (self.ybht_sectionArray.count > 0) {
         return self.ybht_sectionArray[0];
     }
@@ -57,7 +73,7 @@ static const void *ybht_keyOfImp = &ybht_keyOfImp;
         array = [NSMutableArray array];
         self.ybht_sectionArray = array;
         
-        self.ybht_imp.dataArray = array;
+        self.ybht_imp.sectionArray = array;
         [self.ybht_proxy addTarget:self.ybht_imp];
         self.delegate = (id<UITableViewDelegate>)self.ybht_proxy;
         self.dataSource = (id<UITableViewDataSource>)self.ybht_proxy;

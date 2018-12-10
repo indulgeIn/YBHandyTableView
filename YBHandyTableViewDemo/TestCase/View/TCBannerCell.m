@@ -34,11 +34,11 @@
 
 - (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)model {
     TCBannerModel *tModel = (TCBannerModel *)model;
-    
+
     self.imgView.image = tModel.image;
 }
 
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model {
++ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
     return [UIScreen mainScreen].bounds.size.width * 0.6;
 }
 

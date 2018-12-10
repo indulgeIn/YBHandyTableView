@@ -13,13 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (YBHandyTableView)
 
-/** 一个 section 情况, 直接配置 cellModel */
+/** 一个 section 时的 cellModel */
 @property (nonatomic, strong, readonly) NSMutableArray<id<YBHTCellModelProtocol>> *ybht_rowArray;
 
-/** 一个 section 情况，可配置 headerModel/footerModel/cellModel */
-@property (nonatomic, strong, readonly) YBHTSection *ybht_section;
+/** 一个 section 时的 headerModel */
+@property (nonatomic, strong) id<YBHTHeaderFooterModelProtocol> ybht_headerModel;
 
-/** 多个 section 情况 */
+/** 一个 section 时的 footerModel */
+@property (nonatomic, strong) id<YBHTHeaderFooterModelProtocol> ybht_footerModel;
+
+/** 多个 section 情况， 每个 YBHTSection 实例包含 headerModel/footerModel/cellModel */
 @property (nonatomic, strong, readonly) NSMutableArray<YBHTSection *> *ybht_sectionArray;
 
 /**

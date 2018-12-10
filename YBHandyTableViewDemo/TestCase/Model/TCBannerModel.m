@@ -13,7 +13,7 @@
 
 #pragma mark - <YBHTCellModelProtocol>
 
-- (Class)ybht_cellClass {
+- (Class<YBHTCellProtocol>)ybht_cellClass {
     return TCBannerCell.self;
 }
 

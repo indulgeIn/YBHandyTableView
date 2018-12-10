@@ -10,6 +10,7 @@
 #import "TCBannerModel.h"
 #import "TCListModel.h"
 #import "TCFunctionModel.h"
+#import "TCListHeaderModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

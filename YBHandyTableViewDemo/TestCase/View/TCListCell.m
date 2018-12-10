@@ -40,7 +40,7 @@
     self.label.text = tModel.des;
 }
 
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model {
++ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 

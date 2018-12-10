@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YBHandyTableViewIMP : NSObject
 
-@property (nonatomic, strong) NSMutableArray<YBHTSection *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<YBHTSection *> *sectionArray;
 
 @end
 

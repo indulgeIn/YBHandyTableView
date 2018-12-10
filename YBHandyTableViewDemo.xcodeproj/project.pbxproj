@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23732F6921BE6CB40009AA84 /* TCListHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23732F6821BE6CB40009AA84 /* TCListHeaderModel.m */; };
+		23732F6C21BE6CD50009AA84 /* TCListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 23732F6B21BE6CD50009AA84 /* TCListHeader.m */; };
 		2374BAB421A152320060E66A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374BAB321A152320060E66A /* AppDelegate.m */; };
 		2374BABA21A152320060E66A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2374BAB821A152320060E66A /* Main.storyboard */; };
 		2374BABC21A152330060E66A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2374BABB21A152330060E66A /* Assets.xcassets */; };
@@ -28,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23732F6021BE50BF0009AA84 /* YBHTHeaderFooterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderFooterProtocol.h; sourceTree = "<group>"; };
+		23732F6121BE50DA0009AA84 /* YBHTHeaderFooterModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderFooterModelProtocol.h; sourceTree = "<group>"; };
+		23732F6721BE6CB40009AA84 /* TCListHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCListHeaderModel.h; sourceTree = "<group>"; };
+		23732F6821BE6CB40009AA84 /* TCListHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCListHeaderModel.m; sourceTree = "<group>"; };
+		23732F6A21BE6CD50009AA84 /* TCListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCListHeader.h; sourceTree = "<group>"; };
+		23732F6B21BE6CD50009AA84 /* TCListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCListHeader.m; sourceTree = "<group>"; };
 		2374BAAF21A152320060E66A /* YBHandyTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBHandyTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2374BAB221A152320060E66A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2374BAB321A152320060E66A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,10 +72,6 @@
 		23E0298721BBBA6C002A3A2D /* YBHTSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTSection.m; sourceTree = "<group>"; };
 		23E0298921BBBC9E002A3A2D /* YBHTCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellProtocol.h; sourceTree = "<group>"; };
 		23E0298A21BBBCC5002A3A2D /* YBHTCellModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellModelProtocol.h; sourceTree = "<group>"; };
-		23E0298C21BBBD31002A3A2D /* YBHTHeaderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderProtocol.h; sourceTree = "<group>"; };
-		23E0298D21BBBD72002A3A2D /* YBHTHeaderModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderModelProtocol.h; sourceTree = "<group>"; };
-		23E0298E21BBBDA5002A3A2D /* YBHTFooterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTFooterProtocol.h; sourceTree = "<group>"; };
-		23E0298F21BBBDBB002A3A2D /* YBHTFooterModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTFooterModelProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23732F6D21BE73F30009AA84 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				2394D97521BBF1DE00E5841D /* localImage0.jpeg */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		2374BAA621A152320060E66A = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +154,7 @@
 		2394D96D21BBEDDD00E5841D /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
-				2394D97521BBF1DE00E5841D /* localImage0.jpeg */,
+				23732F6D21BE73F30009AA84 /* File */,
 				2394D96E21BBEE1300E5841D /* TCDataCenter.h */,
 				2394D96F21BBEE1300E5841D /* TCDataCenter.m */,
 			);
@@ -163,6 +175,8 @@
 		23E0298121BBB3F4002A3A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				23732F6A21BE6CD50009AA84 /* TCListHeader.h */,
+				23732F6B21BE6CD50009AA84 /* TCListHeader.m */,
 				23E0296C21BBB319002A3A2D /* TCBannerCell.h */,
 				23E0296D21BBB319002A3A2D /* TCBannerCell.m */,
 				23E0297521BBB37F002A3A2D /* TCFunctionCell.h */,
@@ -176,6 +190,8 @@
 		23E0298221BBB3F8002A3A2D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23732F6721BE6CB40009AA84 /* TCListHeaderModel.h */,
+				23732F6821BE6CB40009AA84 /* TCListHeaderModel.m */,
 				23E0296F21BBB326002A3A2D /* TCBannerModel.h */,
 				23E0297021BBB326002A3A2D /* TCBannerModel.m */,
 				23E0297821BBB38C002A3A2D /* TCFunctionModel.h */,
@@ -191,10 +207,8 @@
 			children = (
 				23E0298921BBBC9E002A3A2D /* YBHTCellProtocol.h */,
 				23E0298A21BBBCC5002A3A2D /* YBHTCellModelProtocol.h */,
-				23E0298C21BBBD31002A3A2D /* YBHTHeaderProtocol.h */,
-				23E0298D21BBBD72002A3A2D /* YBHTHeaderModelProtocol.h */,
-				23E0298E21BBBDA5002A3A2D /* YBHTFooterProtocol.h */,
-				23E0298F21BBBDBB002A3A2D /* YBHTFooterModelProtocol.h */,
+				23732F6021BE50BF0009AA84 /* YBHTHeaderFooterProtocol.h */,
+				23732F6121BE50DA0009AA84 /* YBHTHeaderFooterModelProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -273,7 +287,9 @@
 				23E0297121BBB326002A3A2D /* TCBannerModel.m in Sources */,
 				23E0296921BB9ABD002A3A2D /* YBHandyTableViewIMP.m in Sources */,
 				23E0296E21BBB319002A3A2D /* TCBannerCell.m in Sources */,
+				23732F6921BE6CB40009AA84 /* TCListHeaderModel.m in Sources */,
 				23E0296221BB8D6F002A3A2D /* YBHandyTableViewProxy.m in Sources */,
+				23732F6C21BE6CD50009AA84 /* TCListHeader.m in Sources */,
 				2374BAC221A152330060E66A /* main.m in Sources */,
 				2394D97321BBEE3000E5841D /* TCViewController.m in Sources */,
 				23E0297A21BBB38C002A3A2D /* TCFunctionModel.m in Sources */,

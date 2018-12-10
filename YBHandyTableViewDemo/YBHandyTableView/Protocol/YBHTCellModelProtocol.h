@@ -14,7 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
-- (Class)ybht_cellClass;
+- (Class<YBHTCellProtocol>)ybht_cellClass;
+
+@optional
+
+- (NSString *)ybht_cellReuseIdentifier;
 
 @end
 

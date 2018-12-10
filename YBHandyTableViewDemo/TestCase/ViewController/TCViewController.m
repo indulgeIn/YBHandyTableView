@@ -41,15 +41,24 @@
 
 - (void)initData {
     
-    //占位的 model
-    TCBannerModel *bModel = [TCBannerModel new];
+    //本地数据 header model
+    TCListHeaderModel *headerModel = [TCListHeaderModel new];
+    headerModel.title = @"动态";
     
-    //本地数据 model
-    TCFunctionModel *fModel = [TCFunctionModel new];
-    fModel.title = @"霸王防脱洗发露，你值得拥有";
+    //占位的 cell model
+    TCBannerModel *bCellModel = [TCBannerModel new];
     
-    //赋值数据源
-    [self.tableView.ybht_rowArray addObjectsFromArray:@[bModel, fModel]];
+    //本地数据 cell model
+    TCFunctionModel *fCellModel = [TCFunctionModel new];
+    fCellModel.title = @"点我变大";
+    
+    //赋值数据源（section0 配置两个 cell，section1 配置一个 header）
+    YBHTSection *section0 = [YBHTSection new];
+    [section0.rowArray addObjectsFromArray:@[bCellModel, fCellModel]];
+    YBHTSection *section1 = [YBHTSection new];
+    section1.headerModel = headerModel;
+    [self.tableView.ybht_sectionArray addObjectsFromArray:@[section0, section1]];
+    
     //刷新
     [self.tableView reloadData];
     
@@ -63,9 +72,9 @@
         self.tableViewFooter.text = nil;
         
         //替换网络请求返回的 banner model
-        [self.tableView.ybht_rowArray replaceObjectAtIndex:0 withObject:bannerModel];
+        [self.tableView.ybht_sectionArray[0].rowArray replaceObjectAtIndex:0 withObject:bannerModel];
         //追加列表数据 model
-        [self.tableView.ybht_rowArray addObjectsFromArray:dataArray];
+        [self.tableView.ybht_sectionArray[1].rowArray addObjectsFromArray:dataArray];
         //刷新
         [self.tableView reloadData];
     } failed:nil];
@@ -74,8 +83,10 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    id<YBHTCellModelProtocol> selectModel = self.tableView.ybht_rowArray[indexPath.row];
+    id<YBHTCellModelProtocol> selectModel = self.tableView.ybht_sectionArray[indexPath.section].rowArray[indexPath.row];
+    
     if ([selectModel isKindOfClass:TCBannerModel.class]) {
+        
         TCBannerModel *model = (TCBannerModel *)selectModel;
         if (model.jumpUrl.length > 0) {
             UIViewController *webVC = [UIViewController new];
@@ -83,7 +94,9 @@
             webVC.navigationItem.title = model.jumpUrl;
             [self.navigationController pushViewController:webVC animated:YES];
         }
+        
     } else if ([selectModel isKindOfClass:TCListModel.class]) {
+        
         TCListModel *model = (TCListModel *)selectModel;
         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"描述" message:model.des preferredStyle:UIAlertControllerStyleAlert];
         [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
