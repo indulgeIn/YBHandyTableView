@@ -34,13 +34,13 @@
 
 #pragma mark - <YBHTCellProtocol>
 
-- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)model {
-    TCListModel *tModel = (TCListModel *)model;
+- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)cModel {
+    TCListModel *model = (TCListModel *)cModel;
     
-    self.label.text = tModel.des;
+    self.label.text = model.des;
 }
 
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
++ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)cModel reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 

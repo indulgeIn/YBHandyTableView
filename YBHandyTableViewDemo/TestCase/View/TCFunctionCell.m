@@ -10,7 +10,8 @@
 #import "TCFunctionModel.h"
 
 @interface TCFunctionCell () <YBHTCellProtocol>
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) TCFunctionModel *model;
 @end
 
 @implementation TCFunctionCell
@@ -20,38 +21,49 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self.contentView addSubview:self.label];
+        [self.contentView addSubview:self.button];
     }
     return self;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.label.frame = self.contentView.bounds;
+    self.button.frame = self.contentView.bounds;
 }
 
 #pragma mark - <YBHTCellProtocol>
 
-- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)model {
-    TCFunctionModel *tModel = (TCFunctionModel *)model;
+- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)cModel {
+    TCFunctionModel *model = (TCFunctionModel *)cModel;
+    self.model = model;
     
-    self.label.text = tModel.title;
+    [self.button setTitle:model.title forState:UIControlStateNormal];
 }
 
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)model reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
-    return 60;
++ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)cModel reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
+    TCFunctionModel *model = (TCFunctionModel *)cModel;
+    return model.isBig ? 100 : 50;
+}
+
+#pragma mark - event
+
+- (void)clickButton:(UIButton *)button {
+    TCFunctionModel *model = self.model;
+    model.isBig = !model.isBig;
+    if (model.cellDelegate && [model.cellDelegate respondsToSelector:@selector(functionCell:clickButton:)]) {
+        [model.cellDelegate functionCell:self clickButton:button];
+    }
 }
 
 #pragma mark - getter
 
-- (UILabel *)label {
-    if (!_label) {
-        _label = [UILabel new];
-        _label.textAlignment = NSTextAlignmentCenter;
-        _label.textColor = [UIColor orangeColor];
-        _label.font = [UIFont boldSystemFontOfSize:20];
+- (UIButton *)button {
+    if (!_button) {
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_button setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+        [_button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _label;
+    return _button;
 }
 
 @end

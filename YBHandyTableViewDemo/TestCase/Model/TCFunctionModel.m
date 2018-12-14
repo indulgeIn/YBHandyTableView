@@ -11,6 +11,17 @@
 
 @implementation TCFunctionModel
 
+#pragma mark - life cycle
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.isBig = NO;
+    }
+    return self;
+}
+
 #pragma mark - <YBHTCellModelProtocol>
 
 - (Class)ybht_cellClass {

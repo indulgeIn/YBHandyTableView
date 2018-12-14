@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 多个 section 情况， 每个 YBHTSection 实例包含 headerModel/footerModel/cellModel */
 @property (nonatomic, strong, readonly) NSMutableArray<YBHTSection *> *ybht_sectionArray;
 
+
 /**
  添加代理回调（注意组件使用多代理，谨慎使用）
  */

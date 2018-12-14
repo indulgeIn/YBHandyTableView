@@ -14,10 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
+/**
+ 对应的 header/footer 类
+ */
 - (Class<YBHTHeaderFooterProtocol>)ybht_headerFooterClass;
 
 @optional
 
+/** 对应 header/footer 的复用标识 */
 - (NSString *)ybht_headerFooterReuseIdentifier;
 
 @end

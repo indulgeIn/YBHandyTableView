@@ -14,10 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
+/**
+ 对应 cell 的类
+ */
 - (Class<YBHTCellProtocol>)ybht_cellClass;
 
 @optional
 
+/**
+ 对应 cell 的复用标识符
+ */
 - (NSString *)ybht_cellReuseIdentifier;
 
 @end

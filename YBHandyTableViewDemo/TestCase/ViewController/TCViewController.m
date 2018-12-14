@@ -8,8 +8,9 @@
 
 #import "TCViewController.h"
 #import "TCDataCenter.h"
+#import "TCFunctionCell.h"
 
-@interface TCViewController () <UITableViewDelegate>
+@interface TCViewController () <UITableViewDelegate, TCFunctionCellDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) TCDataCenter *dataCenter;
 @property (nonatomic, strong) UILabel *tableViewFooter;
@@ -37,6 +38,12 @@
     [self.tableView ybht_addDelegate:self];
 }
 
+#pragma mark - <TCFunctionCellDelegate>
+
+- (void)functionCell:(TCFunctionCell *)cell clickButton:(UIButton *)button {
+    [self.tableView reloadData];
+}
+
 #pragma mark - private
 
 - (void)initData {
@@ -50,7 +57,8 @@
     
     //本地数据 cell model
     TCFunctionModel *fCellModel = [TCFunctionModel new];
-    fCellModel.title = @"点我变大";
+    fCellModel.title = @"点我变高";
+    fCellModel.cellDelegate = self;
     
     //赋值数据源（section0 配置两个 cell，section1 配置一个 header）
     YBHTSection *section0 = [YBHTSection new];

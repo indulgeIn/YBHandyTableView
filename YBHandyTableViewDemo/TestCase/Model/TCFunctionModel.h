@@ -11,7 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TCFunctionModel : NSObject <YBHTCellModelProtocol>
+
 @property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, assign) BOOL isBig;
+
+@property (nonatomic, weak) id cellDelegate;
+
 @end
 
 NS_ASSUME_NONNULL_END

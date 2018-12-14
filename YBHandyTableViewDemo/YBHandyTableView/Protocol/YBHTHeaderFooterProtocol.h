@@ -16,9 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
-- (void)ybht_setHeaderFooterModel:(id<YBHTHeaderFooterModelProtocol>)model;
+/**
+ 给 header/footer 赋值数据
+ */
+- (void)ybht_setHeaderFooterModel:(id<YBHTHeaderFooterModelProtocol>)hfModel;
 
-+ (CGFloat)ybht_heightForHeaderFooterWithModel:(id<YBHTHeaderFooterModelProtocol>)model reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
+/**
+ 返回 header/footer 高度
+ */
++ (CGFloat)ybht_heightForHeaderFooterWithModel:(id<YBHTHeaderFooterModelProtocol>)hfModel reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
 
 @end
 

@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class TCFunctionCell;
+
+@protocol TCFunctionCellDelegate <NSObject>
+
+- (void)functionCell:(TCFunctionCell *)cell clickButton:(UIButton *)button;
+
+@end
+
 @interface TCFunctionCell : UITableViewCell
 
 @end
