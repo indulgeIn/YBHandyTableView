@@ -79,6 +79,16 @@
     
     [cell ybht_setCellModel:cellModel];
     
+    if ([cell respondsToSelector:@selector(setYbht_reloadTableView:)]) {
+        __weak typeof(tableView) wTableView = tableView;
+        [cell setYbht_reloadTableView:^{
+            __strong typeof(wTableView) sTableView = wTableView;
+            if (sTableView) {
+                [sTableView reloadData];
+            }
+        }];
+    }
+    
     return cell;
 }
 

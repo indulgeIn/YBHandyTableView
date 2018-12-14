@@ -26,6 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)cModel reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath;
 
+@optional
+
+/**
+ 刷新 tableView
+ */
+@property (nonatomic, copy) void(^ybht_reloadTableView)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

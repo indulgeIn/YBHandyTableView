@@ -16,6 +16,8 @@
 
 @implementation TCFunctionCell
 
+@synthesize ybht_reloadTableView = _ybht_reloadTableView;
+
 #pragma mark - life cycle
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -50,9 +52,8 @@
 - (void)clickButton:(UIButton *)button {
     TCFunctionModel *model = self.model;
     model.isBig = !model.isBig;
-    if (model.cellDelegate && [model.cellDelegate respondsToSelector:@selector(functionCell:clickButton:)]) {
-        [model.cellDelegate functionCell:self clickButton:button];
-    }
+    
+    self.ybht_reloadTableView();
 }
 
 #pragma mark - getter

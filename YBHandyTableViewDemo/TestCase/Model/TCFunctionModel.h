@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isBig;
 
-@property (nonatomic, weak) id cellDelegate;
-
 @end
 
 NS_ASSUME_NONNULL_END
