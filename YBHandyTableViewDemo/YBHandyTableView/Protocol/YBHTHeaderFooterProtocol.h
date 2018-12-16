@@ -26,6 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (CGFloat)ybht_heightForHeaderFooterWithModel:(id<YBHTHeaderFooterModelProtocol>)hfModel reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
 
+@optional
+
+/**
+ 刷新 tableView
+ */
+@property (nonatomic, copy) void(^ybht_reloadTableView)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

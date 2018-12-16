@@ -124,7 +124,19 @@
     }
     
     if ([view conformsToProtocol:@protocol(YBHTHeaderFooterProtocol)]) {
-        [(id<YBHTHeaderFooterProtocol>)view ybht_setHeaderFooterModel:model];
+        UIView<YBHTHeaderFooterProtocol> *tmpView = (UIView<YBHTHeaderFooterProtocol> *)view;
+        
+        [tmpView ybht_setHeaderFooterModel:model];
+        
+        if ([tmpView respondsToSelector:@selector(setYbht_reloadTableView:)]) {
+            __weak typeof(tableView) wTableView = tableView;
+            [tmpView setYbht_reloadTableView:^{
+                __strong typeof(wTableView) sTableView = wTableView;
+                if (sTableView) {
+                    [sTableView reloadData];
+                }
+            }];
+        }
     }
     
     return view;
