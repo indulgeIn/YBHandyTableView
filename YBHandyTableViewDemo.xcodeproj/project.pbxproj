@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		23732F6021BE50BF0009AA84 /* YBHTHeaderFooterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderFooterProtocol.h; sourceTree = "<group>"; };
-		23732F6121BE50DA0009AA84 /* YBHTHeaderFooterModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderFooterModelProtocol.h; sourceTree = "<group>"; };
+		23732F6121BE50DA0009AA84 /* YBHTHeaderFooterConfigProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderFooterConfigProtocol.h; sourceTree = "<group>"; };
 		23732F6721BE6CB40009AA84 /* TCListHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCListHeaderModel.h; sourceTree = "<group>"; };
 		23732F6821BE6CB40009AA84 /* TCListHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCListHeaderModel.m; sourceTree = "<group>"; };
 		23732F6A21BE6CD50009AA84 /* TCListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCListHeader.h; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		23E0298621BBBA6C002A3A2D /* YBHTSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTSection.h; sourceTree = "<group>"; };
 		23E0298721BBBA6C002A3A2D /* YBHTSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTSection.m; sourceTree = "<group>"; };
 		23E0298921BBBC9E002A3A2D /* YBHTCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellProtocol.h; sourceTree = "<group>"; };
-		23E0298A21BBBCC5002A3A2D /* YBHTCellModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellModelProtocol.h; sourceTree = "<group>"; };
+		23E0298A21BBBCC5002A3A2D /* YBHTCellConfigProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellConfigProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,9 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				23E0298921BBBC9E002A3A2D /* YBHTCellProtocol.h */,
-				23E0298A21BBBCC5002A3A2D /* YBHTCellModelProtocol.h */,
+				23E0298A21BBBCC5002A3A2D /* YBHTCellConfigProtocol.h */,
 				23732F6021BE50BF0009AA84 /* YBHTHeaderFooterProtocol.h */,
-				23732F6121BE50DA0009AA84 /* YBHTHeaderFooterModelProtocol.h */,
+				23732F6121BE50DA0009AA84 /* YBHTHeaderFooterConfigProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";

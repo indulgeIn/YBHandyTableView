@@ -31,13 +31,13 @@
 
 #pragma mark - <YBHTHeaderFooterProtocol>
 
-- (void)ybht_setHeaderFooterModel:(id<YBHTHeaderFooterModelProtocol>)hfModel {
-    TCListHeaderModel *model = (TCListHeaderModel *)hfModel;
+- (void)ybht_setHeaderFooterConfig:(id<YBHTHeaderFooterConfigProtocol>)config {
+    TCListHeaderModel *model = (TCListHeaderModel *)config;
     
     self.label.text = model.title;
 }
 
-+ (CGFloat)ybht_heightForHeaderFooterWithModel:(id<YBHTHeaderFooterModelProtocol>)hfModel reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section {
++ (CGFloat)ybht_heightForHeaderFooterWithConfig:(id<YBHTHeaderFooterConfigProtocol>)config reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section {
     return 44;
 }
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TCFunctionModel : NSObject <YBHTCellModelProtocol>
+@interface TCFunctionModel : NSObject <YBHTCellConfigProtocol>
 
 @property (nonatomic, copy) NSString *title;
 

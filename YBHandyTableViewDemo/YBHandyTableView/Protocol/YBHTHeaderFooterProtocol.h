@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol YBHTHeaderFooterModelProtocol;
+@protocol YBHTHeaderFooterConfigProtocol;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,14 +17,21 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 /**
- 给 header/footer 赋值数据
+ 传递配置对象给 header/footer (根据配置对象拿到数据更新UI)
+
+ @param config 配置对象
  */
-- (void)ybht_setHeaderFooterModel:(id<YBHTHeaderFooterModelProtocol>)hfModel;
+- (void)ybht_setHeaderFooterConfig:(id<YBHTHeaderFooterConfigProtocol>)config;
 
 /**
- 返回 header/footer 高度
+ 获取 header/footer 的高度
+
+ @param config 配置对象
+ @param reuseIdentifier 复用标识
+ @param section section
+ @return 高度
  */
-+ (CGFloat)ybht_heightForHeaderFooterWithModel:(id<YBHTHeaderFooterModelProtocol>)hfModel reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
++ (CGFloat)ybht_heightForHeaderFooterWithConfig:(id<YBHTHeaderFooterConfigProtocol>)config reuseIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
 
 @optional
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TCBannerModel : NSObject <YBHTCellModelProtocol>
+@interface TCBannerModel : NSObject <YBHTCellConfigProtocol>
 
 @property (nonatomic, strong) UIImage *image;
 

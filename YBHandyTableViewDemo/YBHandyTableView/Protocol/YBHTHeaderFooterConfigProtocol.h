@@ -1,5 +1,5 @@
 //
-//  YBHTHeaderFooterModelProtocol.h
+//  YBHTHeaderFooterConfigProtocol.h
 //  YBHandyTableViewDemo
 //
 //  Created by 杨波 on 2018/12/10.
@@ -10,18 +10,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol YBHTHeaderFooterModelProtocol <NSObject>
+@protocol YBHTHeaderFooterConfigProtocol <NSObject>
 
 @required
 
 /**
- 对应的 header/footer 类
+ 获取 header/footer 类类型
+
+ @return 类类型
  */
 - (Class<YBHTHeaderFooterProtocol>)ybht_headerFooterClass;
 
 @optional
 
-/** 对应 header/footer 的复用标识 */
+/**
+ 获取 header/footer 的复用标识
+
+ @return 复用标识
+ */
 - (NSString *)ybht_headerFooterReuseIdentifier;
 
 @end

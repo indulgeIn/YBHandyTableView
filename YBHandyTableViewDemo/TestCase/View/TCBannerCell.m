@@ -32,13 +32,13 @@
 
 #pragma mark - <YBHTCellProtocol>
 
-- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)cModel {
-    TCBannerModel *model = (TCBannerModel *)cModel;
+- (void)ybht_setCellConfig:(id<YBHTCellConfigProtocol>)config {
+    TCBannerModel *model = (TCBannerModel *)config;
 
     self.imgView.image = model.image;
 }
 
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)cModel reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
++ (CGFloat)ybht_heightForCellWithConfig:(id<YBHTCellConfigProtocol>)config reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
     return [UIScreen mainScreen].bounds.size.width * 0.6;
 }
 

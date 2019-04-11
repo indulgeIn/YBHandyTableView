@@ -35,15 +35,15 @@
 
 #pragma mark - <YBHTCellProtocol>
 
-- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)cModel {
-    TCFunctionModel *model = (TCFunctionModel *)cModel;
+- (void)ybht_setCellConfig:(id<YBHTCellConfigProtocol>)config {
+    TCFunctionModel *model = (TCFunctionModel *)config;
     self.model = model;
     
     [self.button setTitle:model.title forState:UIControlStateNormal];
 }
 
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)cModel reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
-    TCFunctionModel *model = (TCFunctionModel *)cModel;
++ (CGFloat)ybht_heightForCellWithConfig:(id<YBHTCellConfigProtocol>)config reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath {
+    TCFunctionModel *model = (TCFunctionModel *)config;
     return model.isBig ? 100 : 50;
 }
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TCListModel : NSObject <YBHTCellModelProtocol>
+@interface TCListModel : NSObject <YBHTCellConfigProtocol>
 
 @property (nonatomic, copy) NSString *des;
 

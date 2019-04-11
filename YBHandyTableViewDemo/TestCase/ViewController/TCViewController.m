@@ -46,22 +46,22 @@
 
 - (void)initData {
     
-    //本地数据 header model
-    TCListHeaderModel *headerModel = [TCListHeaderModel new];
-    headerModel.title = @"动态";
+    //本地数据 header config
+    TCListHeaderModel *headerConfig = [TCListHeaderModel new];
+    headerConfig.title = @"动态";
     
-    //占位的 cell model
-    TCBannerModel *bCellModel = [TCBannerModel new];
+    //占位的 cell config
+    TCBannerModel *bCellConfig = [TCBannerModel new];
     
     //本地数据 cell model
-    TCFunctionModel *fCellModel = [TCFunctionModel new];
-    fCellModel.title = @"点我变高";
+    TCFunctionModel *fCellConfig = [TCFunctionModel new];
+    fCellConfig.title = @"点我变高";
     
     //赋值数据源（section0 配置两个 cell，section1 配置一个 header）
     YBHTSection *section0 = [YBHTSection new];
-    [section0.rowArray addObjectsFromArray:@[bCellModel, fCellModel]];
+    [section0.rowArray addObjectsFromArray:@[bCellConfig, fCellConfig]];
     YBHTSection *section1 = [YBHTSection new];
-    section1.headerModel = headerModel;
+    section1.headerConfig = headerConfig;
     [self.tableView.ybht_sectionArray addObjectsFromArray:@[section0, section1]];
     
     //刷新
@@ -88,7 +88,7 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    id<YBHTCellModelProtocol> selectModel = self.tableView.ybht_sectionArray[indexPath.section].rowArray[indexPath.row];
+    id<YBHTCellConfigProtocol> selectModel = self.tableView.ybht_sectionArray[indexPath.section].rowArray[indexPath.row];
     
     if ([selectModel isKindOfClass:TCBannerModel.class]) {
         

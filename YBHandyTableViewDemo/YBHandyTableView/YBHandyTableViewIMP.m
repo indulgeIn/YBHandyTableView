@@ -18,42 +18,40 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     YBHTSection *htSection = self.sectionArray[indexPath.section];
-    id<YBHTCellModelProtocol> cellModel = htSection.rowArray[indexPath.row];
+    id<YBHTCellConfigProtocol> cellConfig = htSection.rowArray[indexPath.row];
     
-    if ([cellModel.ybht_cellClass respondsToSelector:@selector(ybht_heightForCellWithModel:reuseIdentifier:indexPath:)]) {
-        return [cellModel.ybht_cellClass ybht_heightForCellWithModel:cellModel reuseIdentifier:[self reuseIdentifierForCellModel:cellModel] indexPath:indexPath];
+    if ([cellConfig.ybht_cellClass respondsToSelector:@selector(ybht_heightForCellWithConfig:reuseIdentifier:indexPath:)]) {
+        return [cellConfig.ybht_cellClass ybht_heightForCellWithConfig:cellConfig reuseIdentifier:[self reuseIdentifierForCellConfig:cellConfig] indexPath:indexPath];
     }
     return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     YBHTSection *htSection = self.sectionArray[section];
-    id<YBHTHeaderFooterModelProtocol> model = htSection.headerModel;
+    id<YBHTHeaderFooterConfigProtocol> config = htSection.headerConfig;
     
-    return [self heightForHeaderFooterWithTableView:tableView model:model section:section];
+    return [self heightForHeaderFooterWithTableView:tableView config:config section:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     YBHTSection *htSection = self.sectionArray[section];
-    id<YBHTHeaderFooterModelProtocol> model = htSection.footerModel;
+    id<YBHTHeaderFooterConfigProtocol> config = htSection.footerConfig;
     
-    return [self heightForHeaderFooterWithTableView:tableView model:model section:section];
+    return [self heightForHeaderFooterWithTableView:tableView config:config section:section];
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     YBHTSection *htSection = self.sectionArray[section];
-    id<YBHTHeaderFooterModelProtocol> model = htSection.headerModel;
-    if (!model) return nil;
+    id<YBHTHeaderFooterConfigProtocol> config = htSection.headerConfig;
     
-    return [self viewForHeaderFooterWithTableView:tableView model:model section:section];
+    return [self viewForHeaderFooterWithTableView:tableView config:config section:section];
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     YBHTSection *htSection = self.sectionArray[section];
-    id<YBHTHeaderFooterModelProtocol> model = htSection.footerModel;
-    if (!model) return nil;
+    id<YBHTHeaderFooterConfigProtocol> config = htSection.footerConfig;
     
-    return [self viewForHeaderFooterWithTableView:tableView model:model section:section];
+    return [self viewForHeaderFooterWithTableView:tableView config:config section:section];
 }
 
 #pragma mark - UITableViewDataSource
@@ -68,16 +66,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YBHTSection *htSection = self.sectionArray[indexPath.section];
-    id<YBHTCellModelProtocol> cellModel = htSection.rowArray[indexPath.row];
+    id<YBHTCellConfigProtocol> cellConfig = htSection.rowArray[indexPath.row];
     
-    Class cellClass = cellModel.ybht_cellClass;
-    NSString *identifier = [self reuseIdentifierForCellModel:cellModel];
+    Class cellClass = cellConfig.ybht_cellClass;
+    NSString *identifier = [self reuseIdentifierForCellConfig:cellConfig];
     UITableViewCell<YBHTCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    [cell ybht_setCellModel:cellModel];
+    [cell ybht_setCellConfig:cellConfig];
     
     if ([cell respondsToSelector:@selector(setYbht_reloadTableView:)]) {
         __weak typeof(tableView) wTableView = tableView;
@@ -94,24 +92,26 @@
 
 #pragma mark - private
 
-- (NSString *)reuseIdentifierForCellModel:(id<YBHTCellModelProtocol>)model {
-    return (model && [model respondsToSelector:@selector(ybht_cellReuseIdentifier)]) ? model.ybht_cellReuseIdentifier : NSStringFromClass(model.ybht_cellClass);
+- (NSString *)reuseIdentifierForCellConfig:(id<YBHTCellConfigProtocol>)config {
+    return (config && [config respondsToSelector:@selector(ybht_cellReuseIdentifier)]) ? config.ybht_cellReuseIdentifier : NSStringFromClass(config.ybht_cellClass);
 }
 
-- (NSString *)reuseIdentifierForHeaderFooterModel:(id<YBHTHeaderFooterModelProtocol>)model {
-    return (model && [model respondsToSelector:@selector(ybht_headerFooterReuseIdentifier)]) ? model.ybht_headerFooterReuseIdentifier : NSStringFromClass(model.ybht_headerFooterClass);
+- (NSString *)reuseIdentifierForHeaderFooterConfig:(id<YBHTHeaderFooterConfigProtocol>)config {
+    return (config && [config respondsToSelector:@selector(ybht_headerFooterReuseIdentifier)]) ? config.ybht_headerFooterReuseIdentifier : NSStringFromClass(config.ybht_headerFooterClass);
 }
 
-- (CGFloat)heightForHeaderFooterWithTableView:(UITableView *)tableView model:(id<YBHTHeaderFooterModelProtocol>)model section:(NSInteger)section {
-    if (model && [model.ybht_headerFooterClass respondsToSelector:@selector(ybht_heightForHeaderFooterWithModel:reuseIdentifier:section:)]) {
-        return [model.ybht_headerFooterClass ybht_heightForHeaderFooterWithModel:model reuseIdentifier:[self reuseIdentifierForHeaderFooterModel:model] section:section];
+- (CGFloat)heightForHeaderFooterWithTableView:(UITableView *)tableView config:(id<YBHTHeaderFooterConfigProtocol>)config section:(NSInteger)section {
+    if (config && [config.ybht_headerFooterClass respondsToSelector:@selector(ybht_heightForHeaderFooterWithConfig:reuseIdentifier:section:)]) {
+        return [config.ybht_headerFooterClass ybht_heightForHeaderFooterWithConfig:config reuseIdentifier:[self reuseIdentifierForHeaderFooterConfig:config] section:section];
     }
     return tableView.style == UITableViewStylePlain ? 0 : CGFLOAT_MIN;
 }
 
-- (__kindof UIView *)viewForHeaderFooterWithTableView:(UITableView *)tableView model:(id<YBHTHeaderFooterModelProtocol>)model section:(NSInteger)section {
-    Class headerClass = model.ybht_headerFooterClass;
-    NSString *identifier = [self reuseIdentifierForHeaderFooterModel:model];
+- (__kindof UIView *)viewForHeaderFooterWithTableView:(UITableView *)tableView config:(id<YBHTHeaderFooterConfigProtocol>)config section:(NSInteger)section {
+    if (!config) return nil;
+    
+    Class headerClass = config.ybht_headerFooterClass;
+    NSString *identifier = [self reuseIdentifierForHeaderFooterConfig:config];
     
     UIView *view = nil;
     if ([headerClass isKindOfClass:UITableViewHeaderFooterView.class]) {
@@ -126,7 +126,7 @@
     if ([view conformsToProtocol:@protocol(YBHTHeaderFooterProtocol)]) {
         UIView<YBHTHeaderFooterProtocol> *tmpView = (UIView<YBHTHeaderFooterProtocol> *)view;
         
-        [tmpView ybht_setHeaderFooterModel:model];
+        [tmpView ybht_setHeaderFooterConfig:config];
         
         if ([tmpView respondsToSelector:@selector(setYbht_reloadTableView:)]) {
             __weak typeof(tableView) wTableView = tableView;

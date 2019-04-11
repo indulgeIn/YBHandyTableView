@@ -1,5 +1,5 @@
 //
-//  YBHTCellModelProtocol.h
+//  YBHTCellConfigProtocol.h
 //  YBHandyTableViewDemo
 //
 //  Created by 杨波 on 2018/12/8.
@@ -10,19 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol YBHTCellModelProtocol <NSObject>
+@protocol YBHTCellConfigProtocol <NSObject>
 
 @required
 
 /**
- 对应 cell 的类
+ 获取 cell 的类类型
+
+ @return 类类型
  */
 - (Class<YBHTCellProtocol>)ybht_cellClass;
 
 @optional
 
 /**
- 对应 cell 的复用标识符
+ 获取 cell 的复用标识
+
+ @return 复用标识
  */
 - (NSString *)ybht_cellReuseIdentifier;
 

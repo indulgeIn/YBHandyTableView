@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TCListHeaderModel : NSObject <YBHTHeaderFooterModelProtocol>
+@interface TCListHeaderModel : NSObject <YBHTHeaderFooterConfigProtocol>
 
 @property (nonatomic, copy) NSString *title;
 

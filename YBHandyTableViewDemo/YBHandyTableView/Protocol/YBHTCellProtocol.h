@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol YBHTCellModelProtocol;
+@protocol YBHTCellConfigProtocol;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,14 +17,21 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 /**
- 给 cell 赋值数据
+ 传递配置对象给 header/footer (根据配置对象拿到数据更新UI)
+
+ @param config 配置对象
  */
-- (void)ybht_setCellModel:(id<YBHTCellModelProtocol>)cModel;
+- (void)ybht_setCellConfig:(id<YBHTCellConfigProtocol>)config;
 
 /**
- 返回 cell 的高度
+ 获取 cell 的高度
+ 
+ @param config 配置对象
+ @param reuseIdentifier 复用标识
+ @param indexPath indexPath
+ @return 高度
  */
-+ (CGFloat)ybht_heightForCellWithModel:(id<YBHTCellModelProtocol>)cModel reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath;
++ (CGFloat)ybht_heightForCellWithConfig:(id<YBHTCellConfigProtocol>)config reuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath;
 
 @optional
 

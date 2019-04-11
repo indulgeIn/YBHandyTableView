@@ -9,14 +9,14 @@
 #import "YBHTSection.h"
 
 @interface YBHTSection ()
-@property (nonatomic, strong) NSMutableArray<id<YBHTCellModelProtocol>> *rowArray;
+@property (nonatomic, strong) NSMutableArray<id<YBHTCellConfigProtocol>> *rowArray;
 @end
 
 @implementation YBHTSection
 
 #pragma mark - getter
 
-- (NSMutableArray<id<YBHTCellModelProtocol>> *)rowArray {
+- (NSMutableArray<id<YBHTCellConfigProtocol>> *)rowArray {
     if (!_rowArray) {
         _rowArray = [NSMutableArray array];
     }
