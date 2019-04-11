@@ -1,6 +1,6 @@
 //
 //  YBHTCellProtocol.h
-//  YBHandyTableViewDemo
+//  YBHandyTableView<https://github.com/indulgeIn/YBHandyTableView>
 //
 //  Created by 杨波 on 2018/12/8.
 //  Copyright © 2018 杨波. All rights reserved.

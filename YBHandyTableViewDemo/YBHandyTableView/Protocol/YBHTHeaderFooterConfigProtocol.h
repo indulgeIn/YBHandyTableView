@@ -1,6 +1,6 @@
 //
 //  YBHTHeaderFooterConfigProtocol.h
-//  YBHandyTableViewDemo
+//  YBHandyTableView<https://github.com/indulgeIn/YBHandyTableView>
 //
 //  Created by 杨波 on 2018/12/10.
 //  Copyright © 2018 杨波. All rights reserved.
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 复用标识
  */
-- (NSString *)ybht_headerFooterReuseIdentifier;
+- (nullable NSString *)ybht_headerFooterReuseIdentifier;
 
 @end
 

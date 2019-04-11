@@ -27,6 +27,13 @@
 		23E0297D21BBB3AF002A3A2D /* TCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0297C21BBB3AF002A3A2D /* TCListCell.m */; };
 		23E0298521BBB48F002A3A2D /* TCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0298421BBB48F002A3A2D /* TCListModel.m */; };
 		23E0298821BBBA6C002A3A2D /* YBHTSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E0298721BBBA6C002A3A2D /* YBHTSection.m */; };
+		23EE5BDA225F11D90099CB9F /* TCEasyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE5BD9225F11D90099CB9F /* TCEasyViewController.m */; };
+		23EE5BE1225F12C30099CB9F /* TCEasyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE5BE0225F12C30099CB9F /* TCEasyCell.m */; };
+		23EE5BE4225F12FC0099CB9F /* TCEasyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE5BE3225F12FC0099CB9F /* TCEasyModel.m */; };
+		23EE5BE8225F157E0099CB9F /* YBHTCellConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE5BE7225F157E0099CB9F /* YBHTCellConfig.m */; };
+		23EE5BEC225F15CD0099CB9F /* YBHTHeaderFooterConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE5BEB225F15CD0099CB9F /* YBHTHeaderFooterConfig.m */; };
+		23EE5BF3225F19CC0099CB9F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE5BF1225F19CC0099CB9F /* MainViewController.m */; };
+		23EE5BF4225F19CC0099CB9F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23EE5BF2225F19CC0099CB9F /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +79,19 @@
 		23E0298721BBBA6C002A3A2D /* YBHTSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTSection.m; sourceTree = "<group>"; };
 		23E0298921BBBC9E002A3A2D /* YBHTCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellProtocol.h; sourceTree = "<group>"; };
 		23E0298A21BBBCC5002A3A2D /* YBHTCellConfigProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellConfigProtocol.h; sourceTree = "<group>"; };
+		23EE5BD8225F11D90099CB9F /* TCEasyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCEasyViewController.h; sourceTree = "<group>"; };
+		23EE5BD9225F11D90099CB9F /* TCEasyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCEasyViewController.m; sourceTree = "<group>"; };
+		23EE5BDF225F12C30099CB9F /* TCEasyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCEasyCell.h; sourceTree = "<group>"; };
+		23EE5BE0225F12C30099CB9F /* TCEasyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCEasyCell.m; sourceTree = "<group>"; };
+		23EE5BE2225F12FC0099CB9F /* TCEasyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCEasyModel.h; sourceTree = "<group>"; };
+		23EE5BE3225F12FC0099CB9F /* TCEasyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCEasyModel.m; sourceTree = "<group>"; };
+		23EE5BE6225F157E0099CB9F /* YBHTCellConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTCellConfig.h; sourceTree = "<group>"; };
+		23EE5BE7225F157E0099CB9F /* YBHTCellConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTCellConfig.m; sourceTree = "<group>"; };
+		23EE5BEA225F15CD0099CB9F /* YBHTHeaderFooterConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBHTHeaderFooterConfig.h; sourceTree = "<group>"; };
+		23EE5BEB225F15CD0099CB9F /* YBHTHeaderFooterConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBHTHeaderFooterConfig.m; sourceTree = "<group>"; };
+		23EE5BF0225F19CC0099CB9F /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		23EE5BF1225F19CC0099CB9F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		23EE5BF2225F19CC0099CB9F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +133,13 @@
 			isa = PBXGroup;
 			children = (
 				2374BAC821A152550060E66A /* YBHandyTableView */,
+				23EE5BDB225F12690099CB9F /* TestCaseEasy */,
 				23E0296A21BBAB99002A3A2D /* TestCase */,
 				2374BAB221A152320060E66A /* AppDelegate.h */,
 				2374BAB321A152320060E66A /* AppDelegate.m */,
+				23EE5BF0225F19CC0099CB9F /* MainViewController.h */,
+				23EE5BF1225F19CC0099CB9F /* MainViewController.m */,
+				23EE5BF2225F19CC0099CB9F /* MainViewController.xib */,
 				2394D97421BBEF3400E5841D /* YBHTPrefixHeader.pch */,
 				2374BAB821A152320060E66A /* Main.storyboard */,
 				2374BABB21A152330060E66A /* Assets.xcassets */,
@@ -129,15 +153,13 @@
 		2374BAC821A152550060E66A /* YBHandyTableView */ = {
 			isa = PBXGroup;
 			children = (
+				23EE5BE5225F15440099CB9F /* Internal */,
 				23E0298B21BBBCE1002A3A2D /* Protocol */,
+				23EE5BE9225F15850099CB9F /* DefaultConfig */,
 				2374BAC921A152680060E66A /* UITableView+YBHandyTableView.h */,
 				2374BACA21A152680060E66A /* UITableView+YBHandyTableView.m */,
 				23E0298621BBBA6C002A3A2D /* YBHTSection.h */,
 				23E0298721BBBA6C002A3A2D /* YBHTSection.m */,
-				23E0296321BB8E00002A3A2D /* YBHandyTableViewProxy.h */,
-				23E0296021BB8D6F002A3A2D /* YBHandyTableViewProxy.m */,
-				23E0296721BB9ABD002A3A2D /* YBHandyTableViewIMP.h */,
-				23E0296821BB9ABD002A3A2D /* YBHandyTableViewIMP.m */,
 			);
 			path = YBHandyTableView;
 			sourceTree = "<group>";
@@ -213,6 +235,65 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		23EE5BDB225F12690099CB9F /* TestCaseEasy */ = {
+			isa = PBXGroup;
+			children = (
+				23EE5BDC225F127F0099CB9F /* ViewController */,
+				23EE5BDE225F12990099CB9F /* Model */,
+				23EE5BDD225F12820099CB9F /* View */,
+			);
+			path = TestCaseEasy;
+			sourceTree = "<group>";
+		};
+		23EE5BDC225F127F0099CB9F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				23EE5BD8225F11D90099CB9F /* TCEasyViewController.h */,
+				23EE5BD9225F11D90099CB9F /* TCEasyViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		23EE5BDD225F12820099CB9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23EE5BDF225F12C30099CB9F /* TCEasyCell.h */,
+				23EE5BE0225F12C30099CB9F /* TCEasyCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23EE5BDE225F12990099CB9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23EE5BE2225F12FC0099CB9F /* TCEasyModel.h */,
+				23EE5BE3225F12FC0099CB9F /* TCEasyModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23EE5BE5225F15440099CB9F /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				23E0296321BB8E00002A3A2D /* YBHandyTableViewProxy.h */,
+				23E0296021BB8D6F002A3A2D /* YBHandyTableViewProxy.m */,
+				23E0296721BB9ABD002A3A2D /* YBHandyTableViewIMP.h */,
+				23E0296821BB9ABD002A3A2D /* YBHandyTableViewIMP.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		23EE5BE9225F15850099CB9F /* DefaultConfig */ = {
+			isa = PBXGroup;
+			children = (
+				23EE5BE6225F157E0099CB9F /* YBHTCellConfig.h */,
+				23EE5BE7225F157E0099CB9F /* YBHTCellConfig.m */,
+				23EE5BEA225F15CD0099CB9F /* YBHTHeaderFooterConfig.h */,
+				23EE5BEB225F15CD0099CB9F /* YBHTHeaderFooterConfig.m */,
+			);
+			path = DefaultConfig;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +353,7 @@
 			files = (
 				2374BABF21A152330060E66A /* LaunchScreen.storyboard in Resources */,
 				2374BABC21A152330060E66A /* Assets.xcassets in Resources */,
+				23EE5BF4225F19CC0099CB9F /* MainViewController.xib in Resources */,
 				2394D97621BBF1DE00E5841D /* localImage0.jpeg in Resources */,
 				2374BABA21A152320060E66A /* Main.storyboard in Resources */,
 			);
@@ -286,17 +368,23 @@
 			files = (
 				23E0297121BBB326002A3A2D /* TCBannerModel.m in Sources */,
 				23E0296921BB9ABD002A3A2D /* YBHandyTableViewIMP.m in Sources */,
+				23EE5BEC225F15CD0099CB9F /* YBHTHeaderFooterConfig.m in Sources */,
 				23E0296E21BBB319002A3A2D /* TCBannerCell.m in Sources */,
+				23EE5BDA225F11D90099CB9F /* TCEasyViewController.m in Sources */,
+				23EE5BE4225F12FC0099CB9F /* TCEasyModel.m in Sources */,
 				23732F6921BE6CB40009AA84 /* TCListHeaderModel.m in Sources */,
 				23E0296221BB8D6F002A3A2D /* YBHandyTableViewProxy.m in Sources */,
 				23732F6C21BE6CD50009AA84 /* TCListHeader.m in Sources */,
 				2374BAC221A152330060E66A /* main.m in Sources */,
 				2394D97321BBEE3000E5841D /* TCViewController.m in Sources */,
+				23EE5BF3225F19CC0099CB9F /* MainViewController.m in Sources */,
 				23E0297A21BBB38C002A3A2D /* TCFunctionModel.m in Sources */,
+				23EE5BE1225F12C30099CB9F /* TCEasyCell.m in Sources */,
 				23E0297D21BBB3AF002A3A2D /* TCListCell.m in Sources */,
 				23E0298821BBBA6C002A3A2D /* YBHTSection.m in Sources */,
 				2394D97021BBEE1300E5841D /* TCDataCenter.m in Sources */,
 				23E0298521BBB48F002A3A2D /* TCListModel.m in Sources */,
+				23EE5BE8225F157E0099CB9F /* YBHTCellConfig.m in Sources */,
 				2374BAB421A152320060E66A /* AppDelegate.m in Sources */,
 				23E0297721BBB37F002A3A2D /* TCFunctionCell.m in Sources */,
 				2374BACB21A152680060E66A /* UITableView+YBHandyTableView.m in Sources */,

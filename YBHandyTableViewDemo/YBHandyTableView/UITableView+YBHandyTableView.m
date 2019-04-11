@@ -1,6 +1,6 @@
 //
 //  UITableView+YBHandyTableView.m
-//  YBHandyTableViewDemo
+//  YBHandyTableView<https://github.com/indulgeIn/YBHandyTableView>
 //
 //  Created by 杨波 on 2018/11/18.
 //  Copyright © 2018 杨波. All rights reserved.

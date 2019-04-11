@@ -1,6 +1,6 @@
 //
 //  YBHandyTableViewIMP.m
-//  YBHandyTableViewDemo
+//  YBHandyTableView<https://github.com/indulgeIn/YBHandyTableView>
 //
 //  Created by 杨波 on 2018/12/8.
 //  Copyright © 2018 杨波. All rights reserved.
@@ -93,11 +93,19 @@
 #pragma mark - private
 
 - (NSString *)reuseIdentifierForCellConfig:(id<YBHTCellConfigProtocol>)config {
-    return (config && [config respondsToSelector:@selector(ybht_cellReuseIdentifier)]) ? config.ybht_cellReuseIdentifier : NSStringFromClass(config.ybht_cellClass);
+    NSString *identifier;
+    if (config && [config respondsToSelector:@selector(ybht_cellReuseIdentifier)]) {
+        identifier = [config ybht_cellReuseIdentifier];
+    }
+    return identifier ?: NSStringFromClass(config.ybht_cellClass);
 }
 
 - (NSString *)reuseIdentifierForHeaderFooterConfig:(id<YBHTHeaderFooterConfigProtocol>)config {
-    return (config && [config respondsToSelector:@selector(ybht_headerFooterReuseIdentifier)]) ? config.ybht_headerFooterReuseIdentifier : NSStringFromClass(config.ybht_headerFooterClass);
+    NSString *identifier;
+    if (config && [config respondsToSelector:@selector(ybht_headerFooterReuseIdentifier)]) {
+        identifier = [config ybht_headerFooterReuseIdentifier];
+    }
+    return identifier ?: NSStringFromClass(config.ybht_headerFooterClass);
 }
 
 - (CGFloat)heightForHeaderFooterWithTableView:(UITableView *)tableView config:(id<YBHTHeaderFooterConfigProtocol>)config section:(NSInteger)section {

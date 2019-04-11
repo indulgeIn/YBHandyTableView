@@ -26,20 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initViews];
+    self.navigationItem.title = @"YBHandyTableView";
+    [self.view addSubview:self.tableView];
+    [self.tableView ybht_addDelegate:self];
     [self initData];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     self.tableView.frame = self.view.bounds;
-}
-
-- (void)initViews {
-    self.navigationItem.title = @"YBHandyTableView";
-    [self.view addSubview:self.tableView];
-    [self.tableView ybht_addDelegate:self];
 }
 
 #pragma mark - private
@@ -87,6 +82,7 @@
 
 #pragma mark - <UITableViewDelegate>
 
+// 理论上这个跳转逻辑可以写在 cell 里面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     id<YBHTCellConfigProtocol> selectModel = self.tableView.ybht_sectionArray[indexPath.section].rowArray[indexPath.row];
     
