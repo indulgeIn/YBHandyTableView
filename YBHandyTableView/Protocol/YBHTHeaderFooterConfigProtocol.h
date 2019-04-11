@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol YBHTHeaderFooterProtocol;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol YBHTHeaderFooterConfigProtocol <NSObject>

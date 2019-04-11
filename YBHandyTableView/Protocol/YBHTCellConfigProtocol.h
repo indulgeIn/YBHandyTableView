@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol YBHTCellProtocol;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol YBHTCellConfigProtocol <NSObject>
