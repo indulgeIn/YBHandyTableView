@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "YBHandyTableView"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.summary      = "让复杂 TableView 优雅起来，更轻易的实现动态化"
   s.description  = <<-DESC
   					让复杂 TableView 优雅起来，更轻易的实现动态化，使用简单易拓展

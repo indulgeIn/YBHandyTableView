@@ -10,7 +10,7 @@
 #import "TCEasyModel.h"
 #import "TCEasyCell.h"
 
-@interface TCEasyViewController ()
+@interface TCEasyViewController () <TCEasyCellDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @end
 
@@ -40,23 +40,29 @@
     
     // 构造数据模型
     TCEasyModel *model0 = TCEasyModel.new;
+    model0.delegate = self;
     model0.text = @"第一条数据";
     TCEasyModel *model1 = TCEasyModel.new;
+    model1.delegate = self;
     model1.text = @"第二条数据";
-    NSArray *dataArray = @[model0, model1];
     
     // 构造配置数据
-    NSMutableArray *cellConfigArray = [NSMutableArray array];
-    for (TCEasyModel *model in dataArray) {
-        YBHTCellConfig *config = [YBHTCellConfig new];
-        config.model = model;
-        config.cellClass = TCEasyCell.self;
-        [cellConfigArray addObject:config];
-    }
-    
+    YBHTCellConfig *c0 = [YBHTCellConfig new];
+    c0.model = model0;
+    c0.cellClass = TCEasyCell.self;
+    YBHTCellConfig *c1 = [YBHTCellConfig new];
+    c1.model = model1;
+    c1.cellClass = TCEasyCell.self;
+
     // 赋值 tableview 并刷新
-    [self.tableView.ybht_rowArray addObjectsFromArray:cellConfigArray];
+    [self.tableView.ybht_rowArray addObjectsFromArray:@[c0, c1]];
     [self.tableView reloadData];
+}
+
+#pragma mark - <TCEasyCellDelegate>
+
+- (void)easyCell:(TCEasyCell *)cell clickButton:(UIButton *)button {
+    NSLog(@"点击了button");
 }
 
 #pragma mark - getter
