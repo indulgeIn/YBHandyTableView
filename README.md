@@ -40,8 +40,8 @@
 ### 核心思想
 
 对于 UITableView，每一个 Header、Footer、Cell 都对应一个配置对象：
-- Header / Footer : id <YBHTHeaderFooterConfigProtocol>
-- Cell : id <YBHTCellConfigProtocol>
+- Header / Footer : `id<YBHTHeaderFooterConfigProtocol>`
+- Cell : `id<YBHTCellConfigProtocol>`
 
 所以，使用该组件第一步就是构建和视图等量的配置对象。
 
