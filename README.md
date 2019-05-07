@@ -1,5 +1,9 @@
 # YBHandyTableView
 
+[![Cocoapods](https://img.shields.io/cocoapods/v/YBModelFile.svg)](https://cocoapods.org/pods/YBHandyTableView)&nbsp;
+[![Cocoapods](https://img.shields.io/cocoapods/p/YBModelFile.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
+[![License](https://img.shields.io/github/license/indulgeIn/YBModelFile.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
+
 让复杂 TableView 优雅起来，更轻易的实现动态化。
 
 原理解析博客：[iOS 架构组件：让复杂 TableView 优雅起来](https://www.jianshu.com/p/7db73489ad99)
