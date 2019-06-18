@@ -128,7 +128,7 @@
     NSString *identifier = [self reuseIdentifierForHeaderFooterConfig:config];
     
     UIView *view = nil;
-    if ([headerFooterClass isKindOfClass:UITableViewHeaderFooterView.class]) {
+    if ([headerFooterClass isSubclassOfClass:UITableViewHeaderFooterView.class]) {
         view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
         if (!view) {
             NSString *path = [[NSBundle mainBundle] pathForResource:NSStringFromClass(headerFooterClass) ofType:@"nib"];
