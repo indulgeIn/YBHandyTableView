@@ -72,7 +72,13 @@
     NSString *identifier = [self reuseIdentifierForCellConfig:cellConfig];
     UITableViewCell<YBHTCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        NSString *path = [[NSBundle mainBundle] pathForResource:NSStringFromClass(cellClass) ofType:@"nib"];
+        if (path) {
+            [tableView registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil] forCellReuseIdentifier:identifier];
+        } else {
+            [tableView registerClass:cellClass forCellReuseIdentifier:identifier];
+        }
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
     
     [cell ybht_setCellConfig:cellConfig];
@@ -118,17 +124,23 @@
 - (__kindof UIView *)viewForHeaderFooterWithTableView:(UITableView *)tableView config:(id<YBHTHeaderFooterConfigProtocol>)config section:(NSInteger)section {
     if (!config) return nil;
     
-    Class headerClass = config.ybht_headerFooterClass;
+    Class headerFooterClass = config.ybht_headerFooterClass ?: UIView.self;
     NSString *identifier = [self reuseIdentifierForHeaderFooterConfig:config];
     
     UIView *view = nil;
-    if ([headerClass isKindOfClass:UITableViewHeaderFooterView.class]) {
+    if ([headerFooterClass isKindOfClass:UITableViewHeaderFooterView.class]) {
         view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
         if (!view) {
-            view = [[headerClass alloc] initWithReuseIdentifier:identifier];
+            NSString *path = [[NSBundle mainBundle] pathForResource:NSStringFromClass(headerFooterClass) ofType:@"nib"];
+            if (path) {
+                [tableView registerNib:[UINib nibWithNibName:NSStringFromClass(headerFooterClass) bundle:nil] forHeaderFooterViewReuseIdentifier:identifier];
+            } else {
+                [tableView registerClass:headerFooterClass forHeaderFooterViewReuseIdentifier:identifier];
+            }
+            view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
         }
     } else {
-        view = [headerClass new];
+        view = [headerFooterClass new];
     }
     
     if ([view conformsToProtocol:@protocol(YBHTHeaderFooterProtocol)]) {
