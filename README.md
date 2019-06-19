@@ -1,8 +1,8 @@
 # YBHandyTableView
 
-[![Cocoapods](https://img.shields.io/cocoapods/v/YBModelFile.svg)](https://cocoapods.org/pods/YBHandyTableView)&nbsp;
-[![Cocoapods](https://img.shields.io/cocoapods/p/YBModelFile.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
-[![License](https://img.shields.io/github/license/indulgeIn/YBModelFile.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
+[![Cocoapods](https://img.shields.io/cocoapods/v/YBHandyTableView.svg)](https://cocoapods.org/pods/YBHandyTableView)&nbsp;
+[![Cocoapods](https://img.shields.io/cocoapods/p/YBHandyTableView.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
+[![License](https://img.shields.io/github/license/indulgeIn/YBHandyTableView.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
 
 让复杂 TableView 优雅起来，更轻易的实现动态化。
 
