@@ -4,7 +4,7 @@
 [![Cocoapods](https://img.shields.io/cocoapods/p/YBHandyTableView.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
 [![License](https://img.shields.io/github/license/indulgeIn/YBHandyTableView.svg)](https://github.com/indulgeIn/YBHandyTableView)&nbsp;
 
-新版本独立了一个 repo：[YBHandyList](https://github.com/indulgeIn/YBHandyList)，支持 UICollectionView。
+**注意：**新版本独立了一个 repo [YBHandyList](https://github.com/indulgeIn/YBHandyList)，放弃了多代理，支持 UICollectionView。
 
 让复杂 TableView 优雅起来，更轻易的实现动态化。
 
